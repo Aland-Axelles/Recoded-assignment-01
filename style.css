@@ -1,0 +1,166 @@
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap");
+
+
+
+:root {
+    --bg-main: hsl(217, 54%, 11%);
+    --bg-card: hsl(216, 50%, 16%);
+    --colour-blue: hsl(215, 51%, 70%);
+    --colour-cyan: hsl(178, 100%, 50%);
+    --colour-white: hsl(0, 0%, 100%);
+    --line-colour: hsl(215, 32%, 27%);
+
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: hsl(217, 54%, 11%);
+    font-family: "Outfit", sans-serif;
+    color: hsl(215, 51%, 70%);
+}
+
+.card {
+    background-color: hsl(216, 50%, 16%);
+    width: min(87.5%, 22rem);
+    margin: 9rem auto;
+    padding: 2rem;  
+    border-radius: 15px;
+}
+
+.imageContainer {
+    position: relative;
+    margin: 0 auto;
+    width: 100%;
+    max-width: 300px;
+}
+
+.imageOne {
+    display: block;
+    width: 100%;
+    max-width: 300px;
+    border-radius: 15px;
+    height: auto;
+    
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--colour-cyan);
+    opacity: 0;
+    border-radius: 15px;
+}
+
+.view {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    display: none;
+    cursor: pointer;
+}
+
+.imageContainer:hover .overlay {
+    opacity: 0.5;
+    cursor: pointer;
+}
+
+.imageContainer:hover .overlay + .view {
+    display: block;
+    
+}
+
+.mainText {
+    color:white;
+    font-size: 400;
+    margin: 1rem 0rem 1rem;
+}
+
+.description {
+    font-size: 1.1rem;
+    font-weight: 300;
+}
+
+.priceTime{
+    display: flex;
+    justify-content: space-between;
+    margin: 1rem 0 1.4rem;
+}
+
+.price{
+    color: var(--colour-cyan);
+    font-weight: 600;
+}
+
+.desc {
+    display: flex;
+    align-items: center;
+}
+
+.icon {
+    margin-right: 0.5rem;
+}
+
+.creator {
+    display: flex;
+    border-top: 1px solid hsl(215, 32%, 27%) ;
+    padding-top: 1rem;
+    align-items: center;
+}
+
+.creatorImage {
+    border: 1px solid white;
+    border-radius: 50%;
+    width: 2rem;
+    height: auto;
+    margin-right: 1rem;
+}
+
+.creatorText {
+    font-size: 300;
+}
+
+.creatorName {
+    color: white;
+}
+
+.mainText:hover, .creatorName:hover {
+    cursor: pointer;
+    color: var(--colour-cyan);
+}
+
+.attribution {
+    font-size: 11px;
+    text-align: center;
+}
+
+.attribution a {
+    color: white;
+    text-decoration: none;
+}
+
+.attribution:hover {
+    color: var(--colour-cyan);
+
+}
+
+
+@media screen and (max-width: 325px) {
+    .priceTime {
+      flex-direction: column;
+    } 
+}
+
+/* special Thanks to Nakoya Wilson 
+https://github.com/nakoyawilson/nft-preview-card-component/commits?author=nakoyawilson
+Looking through their code helped me find my way.
+*/
